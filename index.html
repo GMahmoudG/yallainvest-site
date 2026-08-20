@@ -227,10 +227,12 @@
   .price-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;max-width:430px;width:100%;box-shadow:var(--shadow);position:relative}
   .pop-badge{position:absolute;top:-13px;inset-inline-start:34px;background:var(--blue);color:#fff;font-size:12.5px;font-weight:600;padding:5px 14px;border-radius:100px}
   .price-card .plan{font-size:15px;font-weight:600;color:var(--blue);margin-bottom:14px}
-  .price-amt{display:flex;align-items:flex-end;gap:10px}
-  .price-amt .orig{font-family:"IBM Plex Mono";font-size:22px;color:var(--muted);text-decoration:line-through;padding-bottom:8px}
-  .price-amt .val{font-family:"IBM Plex Mono";font-size:52px;font-weight:500;color:var(--ink);line-height:1}
-  .price-amt .per{color:var(--muted);font-size:16px;padding-bottom:6px}
+  .free-hero{font-family:"IBM Plex Sans Arabic";font-size:clamp(30px,7vw,40px);font-weight:700;color:var(--green-brand);line-height:1.05;margin-bottom:12px}
+  .price-amt{display:flex;align-items:flex-end;gap:9px}
+  .price-amt .then-lbl{font-size:14px;color:var(--ink-2);padding-bottom:3px}
+  .price-amt .orig{font-family:"IBM Plex Mono";font-size:16px;color:var(--muted);text-decoration:line-through;padding-bottom:4px}
+  .price-amt .val{font-family:"IBM Plex Mono";font-size:24px;font-weight:600;color:var(--ink);line-height:1}
+  .price-amt .per{color:var(--muted);font-size:14px;padding-bottom:2px}
   .price-note{font-size:14px;color:var(--muted);margin-top:8px}
   .incl{list-style:none;margin:18px 0;display:flex;flex-direction:column;gap:9px}
   .incl li{display:flex;align-items:center;gap:10px;font-size:14.5px;line-height:1.4;color:var(--ink-2)}
@@ -429,16 +431,18 @@
 
     <div class="price-wrap">
       <div class="price-card reveal">
-        <div class="pop-badge" id="popBadge">خصم ٦٠٪ ثابت لمدة ٣ سنوات</div>
+        <div class="pop-badge" id="popBadge" style="display:none"></div>
         <div class="plan">YallaInvest — الاشتراك السنوي</div>
+        <div class="free-hero">٦ أشهر مجاناً</div>
         <div class="price-amt">
+          <span class="then-lbl">ثم</span>
           <span class="orig mono" id="pOrig">$249</span>
           <span class="val mono" id="pVal">$99</span>
           <span class="per" id="pPer">/ سنوياً</span>
         </div>
-        <div class="price-note" id="pNote">أقل من $0.27 يومياً</div>
+        <div class="price-note" id="pNote">أقل من $0.27 يومياً — بعد الفترة المجانية</div>
         <div class="lock">
-          <p>لأن الثروة تُبنى بالوقت لا بالصدفة، انضمّ الآن كأحد شركاء البداية واحصل على ضمان تثبيت السعر لـ ٣ سنوات كاملة، مهما ارتفعت الأسعار مع كل ميزة جديدة.</p>
+          <p>جرّب YallaInvest مجاناً ٦ أشهر كاملة.</p>
         </div>
         <div class="promo" id="promoCode" role="button" tabindex="0" title="اضغط للنسخ">
           <span class="promo-k">استخدم رمز الخصم عند الدفع</span>
@@ -452,10 +456,10 @@
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12.5 10 17.5 19 7" stroke="#10894F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> <span class="en">Community</span> من المحترفين على <span class="en">Discord</span></li>
         </ul>
 
-        <a class="btn-primary" href="#" id="checkout">اشترك الآن</a>
+        <a class="btn-primary" href="#" id="checkout">ابدأ ٦ أشهر مجاناً</a>
         <div class="cancel-line">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="#7A8AA0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          يتجدّد بنفس السعر لمدة ٣ سنوات، ثم $249 سنوياً — ألغِ في أي وقت.
+          مجاني لمدة ٦ أشهر، ثم $99 سنوياً لمدة سنتين باستخدام رمز الخصم.
         </div>
       </div>
     </div>
@@ -553,10 +557,10 @@ const CONFIG = {
     val:        "$99",
     per:        "/ سنوياً",
     original:   "$249",
-    note:       "أقل من $0.27 يومياً",
-    badge:      "خصم ٦٠٪ ثابت لمدة ٣ سنوات",
+    note:       "أقل من $0.27 يومياً — بعد الفترة المجانية",
+    badge:      "",
     promo:      "YALLAINVEST",
-    checkoutUrl:"https://whop.com/checkout/340maRw8uZkDlyQi8F-ubIG-t2Pp-cNdc-7AWFBjAiFhBy/"
+    checkoutUrl:"https://whop.com/checkout/plan_aKDeiJRh5psvM"
   }
 };
 
